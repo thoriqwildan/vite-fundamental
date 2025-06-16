@@ -4,14 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      @import url("style.css");
+      @import url("sample.sass");
+    </style>
   </head>
   <body>
     <h1>Hello World!</h1>
 
     <script type="module">
       import { sayGoodbye } from "./say-goodbye.ts";
+      import { v4 } from "uuid";
+      import * as person from "./person.json";
+      import textFile from "./assets/hello.txt?raw";
 
       sayGoodbye("World");
+
+      console.info(v4());
+      console.log(person);
+      console.log(person.web);
+      console.info(textFile);
     </script>
   </body>
 </html>
